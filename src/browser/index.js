@@ -3,6 +3,7 @@
  */
 
 import { createRoot, unmountComponentAtNode } from '@wordpress/element';
+import {registerBlockCollection, unregisterBlockCollection, registerBlockType, unregisterBlockType, registerBlockVariation, unregisterBlockVariation} from '@wordpress/blocks';
 
 /**
  * Internal dependencies
@@ -20,7 +21,7 @@ import IsolatedBlockEditor from '../index';
  */
 const settings = {
 	iso: {
-		moreMenu: false,
+		moreMenu: false
 	},
 };
 
@@ -113,4 +114,10 @@ window.wp = {
 	...( window.wp ?? {} ),
 	attachEditor,
 	detachEditor,
+	registerBlockCollection,
+	unregisterBlockCollection,
+	registerBlockType,
+	unregisterBlockType,
+	registerBlockVariation,
+	unregisterBlockVariation
 };

@@ -156,7 +156,7 @@ export function useInitializeIsoEditor( { undoManager } = {} ) {
 		return;
 	}
 
-	initializeEditor();
+	// initializeEditor();
 
 	// This allows the editor to swap stores dynamically
 	use( storeHotSwapPlugin, {} );
