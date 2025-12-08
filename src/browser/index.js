@@ -2,8 +2,10 @@
  * WordPress dependencies
  */
 
-import { createRoot, unmountComponentAtNode } from '@wordpress/element';
-
+import { createRoot, unmountComponentAtNode, createElement} from '@wordpress/element';
+import {registerBlockCollection, unregisterBlockCollection, registerBlockType, unregisterBlockType, registerBlockVariation, unregisterBlockVariation} from '@wordpress/blocks';
+import {useBlockProps, useBlockEditContext, InspectorControls, } from "@wordpress/block-editor";
+import * as Components from "@wordpress/components";
 /**
  * Internal dependencies
  */
@@ -100,7 +102,6 @@ function detachEditor( textarea ) {
 
 	if ( editor && editor.classList.contains( 'editor' ) ) {
 		unmountComponentAtNode( editor );
-
 		// @ts-ignore
 		textarea.style.display = null;
 		// @ts-ignore
@@ -113,4 +114,15 @@ window.wp = {
 	...( window.wp ?? {} ),
 	attachEditor,
 	detachEditor,
+	registerBlockCollection,
+	unregisterBlockCollection,
+	registerBlockType,
+	unregisterBlockType,
+	registerBlockVariation,
+	unregisterBlockVariation,
+	createElement,
+	useBlockProps,
+	useBlockEditContext,
+	InspectorControls,
+	Components,
 };
